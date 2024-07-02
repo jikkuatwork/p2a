@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no shrink-to-fit=no"
     />
-    <title>Rapid: Petite Vue</title>
+    <title>p2a</title>
 
     <meta name="description" content="TODO" />
     <link rel="canonical" href="TODO" />
@@ -50,10 +50,10 @@
 
     <script type="module" src="./app.js"></script>
   </head>
-  <body class="page bg-dark-100 c font-inter">
+  <body class="page bg-dark-200 c font-inter">
     <div class="w-full min-h-screen max-w-3xl bg-dark-200 c">
-      <div class="flex flex-col gap-4">
-        <div v-scope="Example()"></div>
+      <div class="flex flex-col gap-4 w-full">
+        <div v-scope="Input({ placeholder: 'yo'})" class="w-full"></div>
       </div>
     </div>
   </body>

@@ -1,5 +1,4 @@
 import { createApp } from "petite-vue"
+import Input from "./components/TextArea.js"
 
-import Example from "./components/Example.js"
-
-createApp({ Example }).mount()
+createApp({ Input }).mount()
