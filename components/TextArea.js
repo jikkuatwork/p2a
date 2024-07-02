@@ -6,11 +6,26 @@ const Component = props => {
   const urlParams = new URLSearchParams(window.location.search)
   const id = urlParams.get("id") || ""
 
+  let state = { prompt: "", variables: [], id }
+
+  if (id != "") {
+    state = {
+      prompt: "Generate {{ n }} jokes for the {{ topic }}",
+      variables: [
+        { key: "topic", value: "donkey" },
+        { key: "n", value: 2 },
+      ],
+      id,
+    }
+  }
+
   function generateAPI() {
     console.log("generateAPI", this.state)
   }
 
   function api() {
+    console.log(this.state)
+
     const queryString = this.state.variables
       .map(variable => `${variable["key"]}='${variable["value"]}'`)
       .join("&")
@@ -50,14 +65,7 @@ const Component = props => {
     $template,
     generateAPI,
     api,
-    state: {
-      prompt: "Generate {{ n }} jokes for the {{ topic }}",
-      variables: [
-        { key: "topic", value: "donkey" },
-        { key: "n", value: 2 },
-      ],
-      id,
-    },
+    state,
   }
 }
 
